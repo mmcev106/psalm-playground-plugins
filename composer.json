@@ -1,0 +1,15 @@
+{
+    "name": "mmcev106/psalm-playground-plugins",
+    "autoload": {
+        "classmap": ["."]
+    },
+    "authors": [
+        {
+            "name": "Mark McEver",
+            "email": "mark@fastmail.net"
+        }
+    ],
+    "require": {
+        "vimeo/psalm": "^5.8"
+    }
+}

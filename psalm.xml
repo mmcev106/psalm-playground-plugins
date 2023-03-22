@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<psalm
+    findUnusedBaselineEntry="true"
+    findUnusedCode="true"
+>
+    <projectFiles>
+        <file name="example.php" />
+    </projectFiles>
+    <plugins>
+        <plugin filename="PlaygroundPlugin1.php" />
+        <plugin filename="PlaygroundPlugin2.php" />
+        <plugin filename="PlaygroundPlugin3.php" />
+	</plugins>
+</psalm>
