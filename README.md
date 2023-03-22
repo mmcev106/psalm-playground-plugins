@@ -1,6 +1,6 @@
 # Psalm Playground Plugins
 
-These Psalm plugins aim to provide a playground that makes it easy to learn more about the various event handlers provided by the Psalm API.  By default they print each location analyzed by Psalm, and can be modified to quickly test the result of any desired action in any of Psalm's API interfaces.
+These Psalm plugins aim to provide a playground that makes it easy to learn more about how to create Psalm plugins.  By default they print each location analyzed by Psalm, and can be modified to quickly test the result of any desired action in any of Psalm's API interfaces.
 
 To see these plugins in action:
 1. Clone this repo

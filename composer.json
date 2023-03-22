@@ -1,14 +1,17 @@
 {
     "name": "mmcev106/psalm-playground-plugins",
-    "autoload": {
-        "classmap": ["."]
-    },
+    "description": "A tool for learning how to write Psalm plugins",
+    "type": "psalm-plugin",
+    "license": "MIT",
     "authors": [
         {
             "name": "Mark McEver",
             "email": "mark@fastmail.net"
         }
     ],
+    "autoload": {
+        "classmap": ["."]
+    },
     "require": {
         "vimeo/psalm": "^5.8"
     }
