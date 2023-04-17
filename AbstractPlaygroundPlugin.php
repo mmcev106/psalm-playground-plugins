@@ -150,6 +150,15 @@ abstract class AbstractPlaygroundPlugin{
     static function getCodeLocationString($l){
         return [$l->file_name, $l->raw_line_number, $l->raw_file_start];
     }
+
+    static function getVariableType($event, $v){
+        if(isset($v->class)){
+            return $v->class->getAttributes()['resolvedName'];
+        }
+        else{
+            return $event->getContext()->vars_in_scope['$' . $v->name]->getId();
+        }
+    }
 }
 
 register_shutdown_function(function(){
