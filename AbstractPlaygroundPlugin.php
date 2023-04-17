@@ -106,6 +106,24 @@ abstract class AbstractPlaygroundPlugin{
         return $location;
     }
 
+    static function getExpr($event){
+        if(method_exists($event, 'getStmt')){
+            $expr = $event->getStmt();
+        }
+        else if(method_exists($event, 'getExpr')){
+            $expr = $event->getExpr();
+        }
+        else{
+            return null;
+        }
+
+        while(isset($expr->expr)){
+            $expr = $expr->expr;
+        }
+
+        return $expr;
+    }
+
     static function getStatementSourceLocationString($event){
         $statements_source = $event->getStatementsSource();
         $filePath = $statements_source->getFileName();
@@ -120,17 +138,7 @@ abstract class AbstractPlaygroundPlugin{
             return [$filePath, null, null];
         }
 
-        if(method_exists($event, 'getStmt')){
-            $expr = $event->getStmt();
-        }
-        else{
-            $expr = $event->getExpr();
-
-            $subExpr = $expr->expr ?? null;
-            if($subExpr){
-                $expr = $subExpr;
-            }
-        }
+        $expr = static::getExpr($event);
 
         return [
             $filePath,
